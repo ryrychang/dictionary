@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/Cellar/node/9.6.1/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js lint:fix
+  /usr/local/Cellar/node/9.6.1/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js build
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -35,6 +35,7 @@ npm manifest:
       "mini-css-extract-plugin": "^0.2.0",
       "react": "^16.2.0",
       "react-dom": "^16.2.0",
+      "react-modal": "^3.3.2",
       "rimraf": "^2.6.2",
       "standard": "^11.0.1",
       "webpack": "^4.1.1",
@@ -2332,6 +2333,10 @@ Lockfile:
       p-finally "^1.0.0"
       signal-exit "^3.0.0"
       strip-eof "^1.0.0"
+  
+  exenv@^1.2.0:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   
   exit-hook@^1.0.0:
     version "1.1.1"
@@ -4789,7 +4794,7 @@ Lockfile:
     dependencies:
       asap "~2.0.3"
   
-  prop-types@^15.6.0:
+  prop-types@^15.5.10, prop-types@^15.6.0:
     version "15.6.1"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
     dependencies:
@@ -4906,6 +4911,14 @@ Lockfile:
       loose-envify "^1.1.0"
       object-assign "^4.1.1"
       prop-types "^15.6.0"
+  
+  react-modal@^3.3.2:
+    version "3.3.2"
+    resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.3.2.tgz#b13da9490653a7c76bc0e9600323eb1079c620e7"
+    dependencies:
+      exenv "^1.2.0"
+      prop-types "^15.5.10"
+      warning "^3.0.0"
   
   react@^16.2.0:
     version "16.2.0"
@@ -6050,6 +6063,12 @@ Lockfile:
     dependencies:
       indexof "0.0.1"
   
+  warning@^3.0.0:
+    version "3.0.0"
+    resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+    dependencies:
+      loose-envify "^1.0.0"
+  
   watchpack@^1.5.0:
     version "1.5.0"
     resolved "https://registry.yarnpkg.com/watchpack/-/watchpack-1.5.0.tgz#231e783af830a22f8966f65c4c4bacc814072eed"
@@ -6283,9 +6302,9 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 1
+  Exit code: 2
   Command: sh
-  Arguments: -c standard --verbose --fix
+  Arguments: -c yarn clean && webpack --config=webpack.config.js
   Directory: /Users/ryanchang/Projects/sandalboyz-id-landing-page
   Output:
   

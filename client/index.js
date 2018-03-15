@@ -1,12 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Modal from './modal'
 import Subscribe from './subscribe'
 import Styles from './index.css'
 
 const Root = () => (
   <div className={Styles.container}>
-    <div className={Styles.content}>
+    <Modal isOpen>
       <Subscribe />
+    </Modal>
+    <div className={Styles.content}>
+      Indonesia
     </div>
   </div>
 )
