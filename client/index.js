@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Subscribe from './subscribe'
 import Styles from './index.css'
 
 const Root = () => (
   <div className={Styles.container}>
-    Hello World!
+    <div className={Styles.content}>
+      <Subscribe />
+    </div>
   </div>
 )
 

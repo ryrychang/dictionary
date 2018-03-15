@@ -1,0 +1,31 @@
+.container {
+  width: 400px;
+  height: 500px;
+}
+
+.formField {
+  margin-bottom: 10px;
+}
+
+.label {
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 100px;
+  border: 1px solid #CCCCCC;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  cursor: pointer;
+
+}
+
+.submit {
+  position: absolute;
+  left: -5000px;
+}

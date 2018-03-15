@@ -1,5 +1,17 @@
+body {
+  font-family: 'Cutive Mono', monospace;
+}
+
 .container {
+  padding: 15px;
   display: flex;
   justify-content: center;
+}
+
+.content {
+  width: 1080px;
+  height: 1080px;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
