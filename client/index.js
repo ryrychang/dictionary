@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Welcome from './Welcome'
+import Welcome from './components/Welcome'
 
 const Root = () => (
   <Welcome />

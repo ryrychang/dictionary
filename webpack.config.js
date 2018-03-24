@@ -29,6 +29,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.svg$/,
+        use: 'svg-react-loader'
       }
     ]
   },

@@ -15,6 +15,28 @@ body {
   justify-content: center;
 }
 
+.header {
+  font-size: 16px;
+  margin: 0;
+}
+
 .newsletterButton {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+}
+
+.social {
+  font-weight: bold;
+}
+
+.socialIcon {
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
   cursor: pointer;
 }
