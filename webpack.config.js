@@ -52,7 +52,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name]_[hash].css',
       chunkFilename: '[id].css'
     }),
     new HtmlWebpackPlugin({

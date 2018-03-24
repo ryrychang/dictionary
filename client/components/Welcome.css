@@ -1,5 +1,6 @@
 body {
   font-family: 'Cutive Mono', monospace;
+  font-size: 12px;
 }
 
 .container {
@@ -10,8 +11,6 @@ body {
 
 .content {
   margin-top: 40px;
-  max-width: 1080px;
-  height: 1080px;
 }
 
 .logoHeader {
@@ -22,12 +21,12 @@ body {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
 }
 
 .header {
-  font-size: 16px;
+  font-size: 3em;
   margin: 0;
 }
 
@@ -36,6 +35,7 @@ body {
 }
 
 .socialRow {
+  font-size: 2em;
   display: flex;
   align-items: center;
 }
@@ -45,13 +45,14 @@ body {
 }
 
 .socialIcon {
-  width: 25px;
-  height: 25px;
+  width: 1.8em;
+  height: 1.8em;
   margin-left: 10px;
   cursor: pointer;
 }
 
 .newsletterButton {
+  font-size: 2em;
   margin-top: 15px;
   text-align: right;
   cursor: pointer;
