@@ -1,7 +1,8 @@
 import React from 'react'
-import Styles from './subscribe.css'
+import Styles from './SubscribeModalContent.css'
 
-class Subscribe extends React.Component {
+// Uses `React.Component` to use `ref`.
+class SubscribeModalContent extends React.Component {
   render () {
     return (
       <div className={Styles.container} id='mc_embed_signup'>
@@ -53,4 +54,4 @@ class Subscribe extends React.Component {
   }
 }
 
-export default Subscribe
+export default SubscribeModalContent
