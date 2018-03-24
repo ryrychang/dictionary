@@ -6,6 +6,7 @@ const Modal = ({ children, ...reactModalProps }) => (
   <ReactModal
     className={Styles.modal}
     overlayClassName={Styles.overlay}
+    ariaHideApp={false}
     {...reactModalProps}
   >
     {children}
