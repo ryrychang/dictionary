@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -33,6 +34,19 @@ module.exports = {
       {
         test: /\.svg$/,
         use: 'svg-react-loader'
+      },
+      {
+        test: /\.(jpe?g|png)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 40000,
+              name: '[name].[ext]'
+            }
+          },
+          'image-webpack-loader'
+        ]
       }
     ]
   },

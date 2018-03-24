@@ -9,10 +9,21 @@ body {
 }
 
 .content {
-  width: 1080px;
+  margin-top: 40px;
+  max-width: 1080px;
   height: 1080px;
+}
+
+.logoHeader {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
 }
 
 .header {
@@ -20,9 +31,8 @@ body {
   margin: 0;
 }
 
-.newsletterButton {
-  cursor: pointer;
-  text-decoration: underline;
+.socialContainer {
+  padding: 10px 0;
 }
 
 .socialRow {
@@ -39,4 +49,11 @@ body {
   height: 25px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.newsletterButton {
+  margin-top: 15px;
+  text-align: right;
+  cursor: pointer;
+  text-decoration: underline;
 }
