@@ -48,7 +48,7 @@ class Welcome extends React.Component {
             </div>
             <div className={Styles.socialRow}>
               <span className={Styles.social}>LINE</span>: SANDALBOYZ
-              <a href='line://oaMessage/@sandalboyz/?Hello%21'>
+              <a href='https://line.me/R/oaMessage/@sandalboyz/?Hello%21'>
                 <LineIcon className={Styles.socialIcon} />
               </a>
             </div>
