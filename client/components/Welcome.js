@@ -53,8 +53,8 @@ class Welcome extends React.Component {
               </a>
             </div>
           </div>
-          <div onClick={this.toggleSubscribeModal} className={Styles.newsletterButton}>
-            Newsletter
+          <div className={Styles.newsletterButton}>
+            <span onClick={this.toggleSubscribeModal}>Newsletter</span>
           </div>
         </div>
       </div>
