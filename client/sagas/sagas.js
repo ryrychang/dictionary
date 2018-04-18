@@ -6,17 +6,10 @@ import {
   FETCH_SYNONYMS_FAILURE
 } from '../actions/actions'
 
-const BASE = 'https://od-api.oxforddictionaries.com/api/v1'
-const APP_ID = 'f22efe53'
-const APP_KEY = '70276fd53c941679255df18417969839'
+const BASE = '/'
 
 const apiClient = axios.create({
-  baseURL: BASE,
-  headers: {
-    // 'app_id': APP_ID,
-    // 'app_key': APP_KEY
-  },
-  withCredentials: true
+  baseURL: BASE
 })
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
@@ -25,7 +18,9 @@ export function * watcherSaga () {
 }
 
 function fetchSynonyms ({ word } = {}) {
-  return apiClient.get(`/entries/en/${word}/synonyms`)
+  return apiClient.get(`/synonyms`, {
+    params: { word }
+  })
 }
 
 // worker saga: makes the api call when watcher saga sees the action
