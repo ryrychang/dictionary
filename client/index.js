@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Welcome from './components/Welcome'
+import Words from './components/Words'
 
 const Root = () => (
-  <Welcome />
+  <Words />
 )
 
 ReactDOM.render(
