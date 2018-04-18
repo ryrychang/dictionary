@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { fetchSynonyms } from '../actions/actions'
 import WordsList from './WordsList'
 
 class Words extends React.Component {
@@ -9,6 +10,11 @@ class Words extends React.Component {
     this.state = {
       search: ''
     }
+  }
+
+  componentDidMount () {
+    console.log('hello')
+    this.props.fetchSynonyms('fun')
   }
 
   render () {
@@ -29,8 +35,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  // fetchWords
+  fetchSynonyms
 }
 
-// export default connect(mapStateToProps, mapDispatchToProps)(Words)
-export default Words
+export default connect(mapStateToProps, mapDispatchToProps)(Words)

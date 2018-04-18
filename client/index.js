@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './store/store'
 import Words from './components/Words'
 
-const Root = () => (
-  <Words />
-)
-
 ReactDOM.render(
-  <Root />,
+  <Provider store={store}>
+    <Words />
+  </Provider>,
   document.querySelector('#root')
 )
