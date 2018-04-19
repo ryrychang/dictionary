@@ -1,0 +1,26 @@
+.container {
+  padding: 15px;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  padding-right: 10px;
+}
+
+.search {
+  margin-right: 10px;
+}
+
+.button {
+  padding: 6px;
+  border: 1px solid #DDDDDD;
+  cursor: pointer;
+}
+
+.button ~ .button {
+  margin-left: 10px;
+}
