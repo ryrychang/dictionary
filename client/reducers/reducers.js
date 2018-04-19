@@ -3,7 +3,10 @@ import {
   FETCH_SYNONYMS_REQUEST,
   FETCH_SYNONYMS_SUCCESS,
   FETCH_SYNONYMS_FAILURE,
-  CLEAR_SYNONYMS
+  CLEAR_SYNONYMS,
+  FETCH_DEFINITIONS_REQUEST,
+  FETCH_DEFINITIONS_SUCCESS,
+  FETCH_DEFINITIONS_FAILURE
 } from '../actions/actions'
 
 const initialState = {}
@@ -43,6 +46,33 @@ const reducer = (state = initialState, action) => {
     case CLEAR_SYNONYMS:
       return {
         synonyms: undefined
+      }
+    case FETCH_DEFINITIONS_REQUEST:
+      return {
+        ...state,
+        definitions: {
+          loading: true,
+          data: undefined,
+          error: undefined
+        }
+      }
+    case FETCH_DEFINITIONS_SUCCESS:
+      return {
+        ...state,
+        definitions: {
+          loading: false,
+          data: payload.data,
+          error: undefined
+        }
+      }
+    case FETCH_DEFINITIONS_FAILURE:
+      return {
+        ...state,
+        definitions: {
+          loading: false,
+          data: undefined,
+          error: payload.error
+        }
       }
     default:
       break
