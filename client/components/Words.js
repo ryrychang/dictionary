@@ -1,8 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { isEmpty } from 'lodash'
+import localStorage from 'store'
 // Redux
-import { fetchSynonyms } from '../actions/actions'
+import { fetchSynonyms, clearSynonyms } from '../actions/actions'
 // Selectors
 import {
   wordsLoadingSelector,
@@ -34,21 +35,31 @@ class Words extends React.Component {
     this.props.fetchSynonyms(search)
   }
 
+  clearStorage = () => {
+    localStorage.clearAll()
+    this.props.clearSynonyms()
+    this.setState({ search: '' })
+  }
+
   render () {
     const { words, loading } = this.props
 
     return (
       <div className={Styles.container}>
-        <label htmlFor='search'>Find synonyms for:</label>
-        <input
-          id='search'
-          value={this.state.search}
-          onChange={this.onChange}
-          onKeyPress={(event) => {
-            if (event.key === 'Enter') this.searchWords()
-          }}
-        />
-        <button htmlFor='search' onClick={this.searchWords}>Search</button>
+        <div className={Styles.searchContainer}>
+          <label className={Styles.label} htmlFor='search'>Find synonyms for:</label>
+          <input
+            id='search'
+            className={Styles.search}
+            value={this.state.search}
+            onChange={this.onChange}
+            onKeyPress={(event) => {
+              if (event.key === 'Enter') this.searchWords()
+            }}
+          />
+          <div className={Styles.button} onClick={this.searchWords}>Search</div>
+          <div className={Styles.button} onClick={this.clearStorage}>Clear Stored Synonyms</div>
+        </div>
         <WordsList words={words} loading={loading} />
       </div>
     )
@@ -61,7 +72,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  fetchSynonyms
+  fetchSynonyms,
+  clearSynonyms
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Words)

@@ -2,7 +2,8 @@ import localStorage from 'store'
 import {
   FETCH_SYNONYMS_REQUEST,
   FETCH_SYNONYMS_SUCCESS,
-  FETCH_SYNONYMS_FAILURE
+  FETCH_SYNONYMS_FAILURE,
+  CLEAR_SYNONYMS
 } from '../actions/actions'
 
 const initialState = {}
@@ -38,6 +39,10 @@ const reducer = (state = initialState, action) => {
           data: undefined,
           error: payload.error
         }
+      }
+    case CLEAR_SYNONYMS:
+      return {
+        synonyms: undefined
       }
     default:
       break
