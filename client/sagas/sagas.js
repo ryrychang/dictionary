@@ -27,7 +27,7 @@ function fetchSynonyms ({ word } = {}) {
 function * workerSaga (action) {
   try {
     const response = yield call(fetchSynonyms, action.payload)
-    const data = response
+    const data = response.data
 
     // dispatch a success action to the store with the new dog
     yield put({ type: FETCH_SYNONYMS_SUCCESS, payload: { data } })
