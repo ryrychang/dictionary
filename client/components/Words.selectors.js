@@ -6,7 +6,7 @@ export const wordsLoadingSelector = createSelector(
   wordsLoading, loading => loading
 )
 
-const wordsData = state => get(state, 'synonyms.data.results')
+const wordsData = state => get(state, 'synonyms.data.results[0]')
 export const wordsDataSelector = createSelector(
   wordsData, words => words
 )

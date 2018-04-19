@@ -8,7 +8,10 @@ import {
   wordsLoadingSelector,
   wordsDataSelector
 } from './Words.selectors'
+// Components
 import WordsList from './WordsList'
+// Styles
+import Styles from './Words.css'
 
 class Words extends React.Component {
   constructor (props) {
@@ -35,10 +38,17 @@ class Words extends React.Component {
     const { words, loading } = this.props
 
     return (
-      <div>
+      <div className={Styles.container}>
         <label htmlFor='search'>Find synonyms for:</label>
-        <input id='search' value={this.state.search} onChange={this.onChange} />
-        <button onClick={this.searchWords}>Search</button>
+        <input
+          id='search'
+          value={this.state.search}
+          onChange={this.onChange}
+          onKeyPress={(event) => {
+            if (event.key === 'Enter') this.searchWords()
+          }}
+        />
+        <button htmlFor='search' onClick={this.searchWords}>Search</button>
         <WordsList words={words} loading={loading} />
       </div>
     )
