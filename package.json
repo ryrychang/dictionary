@@ -37,6 +37,7 @@
     "reselect": "^3.0.1",
     "rimraf": "^2.6.2",
     "standard": "^11.0.1",
+    "store": "^2.0.12",
     "svg-react-loader": "^0.4.5",
     "url-loader": "^1.0.1",
     "webpack": "^4.1.1",

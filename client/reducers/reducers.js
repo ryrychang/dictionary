@@ -1,3 +1,4 @@
+import localStorage from 'store'
 import {
   FETCH_SYNONYMS_REQUEST,
   FETCH_SYNONYMS_SUCCESS,
@@ -20,6 +21,7 @@ const reducer = (state = initialState, action) => {
         }
       }
     case FETCH_SYNONYMS_SUCCESS:
+      localStorage.set('synonyms', payload.data)
       return {
         ...state,
         synonyms: {
