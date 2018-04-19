@@ -1,6 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import enhanceWithClickOutside from 'react-click-outside'
 import { fetchDefinitions } from '../actions/actions'
+import {
+  definitionsLoadingSelector,
+  definitionSelector
+} from './Word.selectors'
 import Styles from './Word.css'
 
 class Word extends React.Component {
@@ -13,6 +18,10 @@ class Word extends React.Component {
     }
   }
 
+  handleClickOutside = () => {
+    this.setState({ open: false })
+  }
+
   toggle = () => {
     const { word } = this.props
     const { open } = this.state
@@ -21,7 +30,7 @@ class Word extends React.Component {
       fetched: true
     })
 
-    if (!this.state.fetched) this.props.fetchDefinitions(word)
+    this.props.fetchDefinitions(word.id)
   }
 
   render () {
@@ -30,11 +39,7 @@ class Word extends React.Component {
     return (
       <div className={Styles.wordWrapper}>
         <div className={this.state.open ? Styles.open : Styles.closed}>
-          {
-            loading
-              ? 'Loading...'
-              : definition
-          }
+          { loading ? 'Loading...' : definition }
         </div>
         <li onClick={this.toggle}>
           {word.id}
@@ -44,12 +49,13 @@ class Word extends React.Component {
   }
 }
 
-const mapStateToProps = {
-  definition: 'something'
-}
+const mapStateToProps = state => ({
+  loading: definitionsLoadingSelector(state),
+  definition: definitionSelector(state)
+})
 
 const mapDispatchToProps = {
   fetchDefinitions
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Word)
+export default connect(mapStateToProps, mapDispatchToProps)(enhanceWithClickOutside(Word))

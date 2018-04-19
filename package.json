@@ -27,6 +27,7 @@
     "mini-css-extract-plugin": "^0.2.0",
     "nodemon": "^1.17.3",
     "react": "^16.2.0",
+    "react-click-outside": "^3.0.1",
     "react-dom": "^16.2.0",
     "react-modal": "^3.3.2",
     "react-redux": "^5.0.7",

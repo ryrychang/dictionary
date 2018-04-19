@@ -1,11 +1,10 @@
 import React from 'react'
 import { get, isEmpty } from 'lodash'
+import Word from './Word'
 
 const renderSynonyms = synonyms => (
   synonyms.map(synonym => (
-    <li key={synonym.id}>
-      {synonym.id}
-    </li>
+    <Word key={synonym.id} word={synonym} />
   ))
 )
 
